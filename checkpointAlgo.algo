@@ -1,0 +1,36 @@
+ALGORITHM Count_words
+VAR
+    len :=INTEGER;
+    nbr_world:=INTEGER;
+    nbr_vowels:=INTEGER;
+    i:= INTEGER;
+    str :=STRING;
+BEGIN
+
+    write ("please write sentence ,that ends with point.") ;
+    read(str);
+    
+    nbr_world :=1;
+    nbr_vowels :=0;
+    i:=0;
+    len := 0;
+
+    WHILE (str[i]:=not '.') DO
+
+        IF (str[i]:=' ') THEN
+        nbr_world:=nbr_world+1;
+        ELSE
+            len := len+1;
+        END_IF
+
+        IF (str[i] = 'a' or str[i] = 'A' or str[i] = 'e' or str[i] = 'E' or str[i] = 'i' or str[i] = 'I' or str[i] ='o' or str[i] ='O' or str[i] = 'u' or str[i] = 'U') THEN
+            nbr_vowels :=nbr_vowels+1;
+        END_IF
+
+        i:=i+1;
+    END_WHILE
+    write("The length of the sentence:",len)
+    write("The number of words in the sentence:",nbr_world )
+    write("The number of vowels in the sentence:",nbr_vowels)
+
+END
